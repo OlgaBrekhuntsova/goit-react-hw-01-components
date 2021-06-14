@@ -15,6 +15,6 @@ ReactDOM.render(
 // // to log results (for example: reportWebVitals(console.log))
 // // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 // reportWebVitals();
-const link = React.createElement("a", { href: "https://google.com"}, "my first react link");
-console.log(link);
+// const link = React.createElement("a", { href: "https://google.com"}, "my first react link");
+// console.log(link);
 // ReactDOM.render(link, document.getElementById('root'));

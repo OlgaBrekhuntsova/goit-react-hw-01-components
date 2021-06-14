@@ -1,0 +1,6 @@
+[
+  { "id": "profile", "name": "Task 1: Social profile"},
+  { "id": "statistics", "name": "Task 2: Statistics"},
+  { "id": "friendList", "name": "Task 3: Friends List"},
+  { "id": "transactionHistory", "name": "Task 4: Transactions history"}
+  ]

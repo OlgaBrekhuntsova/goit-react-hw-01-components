@@ -1,70 +1,123 @@
-# Getting Started with Create React App
+ЗАДАЧА 1
+Профиль социальной сети
+Необходимо создать компонент <Profile>, с помощью которого мы могли бы отображать информацию о пользователе социальной сети. Данные о пользователе лежат в файле user.json.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Превью компонента Profile
 
-## Available Scripts
+Описание компонента
+Компонент должен принимать несколько пропсов с информацией о пользователе:
 
-In the project directory, you can run:
+name — имя пользователя
+tag — тег в социальной сети без @
+location — город и страна
+avatar — url на изображение
+stats — объект с информацией об активности
+Компонент должен создавать DOM элемент следующей структуры.
 
-### `npm start`
+<div class="profile">
+  <div class="description">
+    <img
+      src="https://www.flaticon.com/svg/static/icons/svg/3135/3135715.svg"
+      alt="Аватар пользователя"
+      class="avatar"
+    />
+    <p class="name">Petra Marica</p>
+    <p class="tag">@pmarica</p>
+    <p class="location">Salvador, Brasil</p>
+  </div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  <ul class="stats">
+    <li>
+      <span class="label">Followers</span>
+      <span class="quantity">1000</span>
+    </li>
+    <li>
+      <span class="label">Views</span>
+      <span class="quantity">2000</span>
+    </li>
+    <li>
+      <span class="label">Likes</span>
+      <span class="quantity">3000</span>
+    </li>
+  </ul>
+</div>
+Пример использования
+import user from 'путь/к/user.json;
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<Profile
+  name={user.name}
+  tag={user.tag}
+  location={user.location}
+  avatar={user.avatar}
+  stats={user.stats}
+/>
 
-### `npm test`
+ЗАДАЧА 2
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Секция статистики
+Создать компонет <Statistics>, который бы отображал статистику по переданным пропам. К примеру загрузки в облако по типу файлов, посещение веб-страницы пользователями разных стран, финансовые траты и т. п. Данные о статистике лежат в файле statistical-data.json.
 
-### `npm run build`
+Превью компонента Statistics
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Описание компонента
+Компонент должен принимать два пропа title и stats, в которых указывается заголовок и объект статистики.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+title - не обязателен, и если он не передан, не должна рендериться разметка заголовка <h2>.
+stats - массив объектов содержащих информацию о элементе статистики. Может иметь произвольное кол-во элементов.
+Цвет фона элемента статистики в оформлении можно пропустить, либо создать функцию для генерации случайного цвета.
+Компонент должен создавать DOM элемент следующей структуры.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<section class="statistics">
+  <h2 class="title">Upload stats</h2>
 
-### `npm run eject`
+  <ul class="stat-list">
+    <li class="item">
+      <span class="label">.docx</span>
+      <span class="percentage">4%</span>
+    </li>
+    <li class="item">
+      <span class="label">.mp3</span>
+      <span class="percentage">14%</span>
+    </li>
+    <li class="item">
+      <span class="label">.pdf</span>
+      <span class="percentage">41%</span>
+    </li>
+    <li class="item">
+      <span class="label">.mp4</span>
+      <span class="percentage">12%</span>
+    </li>
+  </ul>
+</section>
+Пример использования
+import statisticalData from '/путь/к/statistical-data.json';
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<Statistics title="Upload stats" stats={statisticalData} />;
+<Statistics stats={statisticalData} />;
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+ЗАДАЧА 3
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+{/_ /_ /_ <Profile _/}
+// name={user.name}
+// tag={user.tag}
+// location={user.location}
+// avatar={user.avatar}
+// stats={user.stats}
+// />
+// _/ _/}
+// {/_ <TaskCard
+// // key={taskList[1].id}
+// taskName={taskList[1].name} >
+{/_
+</TaskCard></li>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<li> <TaskCard _/}
+{/_ // key={taskList[2].id}
+// taskName={taskList[2].name} >
+</TaskCard> </li>
+<li> <TaskCard _/}
+{/_ // key={taskList[3].id}
+// taskName={taskList[3].name} >
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+                    // </TaskCard></li> */}
+                    {/* //   </ul> */}
