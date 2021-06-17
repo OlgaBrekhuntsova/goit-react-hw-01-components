@@ -1,3 +1,5 @@
+https://github.com/goitacademy/react-homework/tree/master/homework-01
+
 ЗАДАЧА 1
 Профиль социальной сети
 Необходимо создать компонент <Profile>, с помощью которого мы могли бы отображать информацию о пользователе социальной сети. Данные о пользователе лежат в файле user.json.
@@ -97,27 +99,74 @@ import statisticalData from '/путь/к/statistical-data.json';
 
 ЗАДАЧА 3
 
-{/_ /_ /_ <Profile _/}
-// name={user.name}
-// tag={user.tag}
-// location={user.location}
-// avatar={user.avatar}
-// stats={user.stats}
-// />
-// _/ _/}
-// {/_ <TaskCard
-// // key={taskList[1].id}
-// taskName={taskList[1].name} >
-{/_
-</TaskCard></li>
+Список друзей
+Необходимо создать компонент <FriendList>, с помощью которого мы могли бы отображать информацию о друзьях пользователя. Информация о друзьях хранится в файле friends.json.
 
-<li> <TaskCard _/}
-{/_ // key={taskList[2].id}
-// taskName={taskList[2].name} >
-</TaskCard> </li>
-<li> <TaskCard _/}
-{/_ // key={taskList[3].id}
-// taskName={taskList[3].name} >
+Описание компонента FriendList
+Компонент должен принимать один проп friends - массив объектов друзей.
 
-                    // </TaskCard></li> */}
-                    {/* //   </ul> */}
+Компонент должен создавать DOM следующей структуры.
+
+<ul class="friend-list">
+  <!-- Произвольное кол-во FriendListItem, в зависимости от кол-ва объектов в массиве -->
+</ul>
+Описание компонента FriendListItem
+Компонент должен принимать несколько пропов:
+
+avatar - ссылка на аватар
+name - имя друга
+isOnline - буль сигнализирующий о состоянии друга, в сети или нет.
+В зависимости от пропа isOnline, должен меняться цвет фона span.status. Это можно сделать через разный CSS-класс или Styled Components.
+
+Компонент должен создавать DOM следующей структуры.
+
+<li class="item">
+  <span class="status"></span>
+  <img class="avatar" src="" alt="" width="48" />
+  <p class="name"></p>
+</li>
+Пример использования
+import friends from 'путь/к/friends.json';
+
+<FriendList friends={friends} />,
+
+ЗАДАЧА 4
+
+История транзакций
+Необходимо создать компонент истории транзакций в личном кабинете интернет банка.
+
+Данные для списка доступны в формате JSON в файле transactions.json. Это массив объектов, каждый объект описывает одну транзакцию со следующими свойствами:
+
+id — уникальный идентификатор транзакции
+type — тип транзакции
+amount - сумма транзакции
+currency - тип валюты
+Описание компонента
+Необходимо создать компонент <TransactionHistory> принимающий один проп items - массив объектов транзакций из transactions.json. Компонент создает разметку таблицы. Каждая транзакция это строка таблицы. В примере приведена разметка двух транзакций.
+
+<table class="transaction-history">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Amount</th>
+      <th>Currency</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>Invoice</td>
+      <td>125</td>
+      <td>USD</td>
+    </tr>
+    <tr>
+      <td>Withdrawal</td>
+      <td>85</td>
+      <td>USD</td>
+    </tr>
+  </tbody>
+</table>
+Пример использования
+import transactions from 'путь/к/transactions.json';
+
+<TransactionHistory items={transactions} />;

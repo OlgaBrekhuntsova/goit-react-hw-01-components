@@ -22,12 +22,15 @@ const Statistics = ({ title, stats}) => {
 
 Statistics.defaultProps = {
     title: "",
-    // stats.likes: 0,
+    // stats.percentage: 0,
 };
 Statistics.propTypes = {
- title: PropTypes.string,
-//   tag: PropTypes.string.isRequired,
+    title: PropTypes.string,
+    stats: PropTypes.arrayOf(PropTypes.shape({
+id: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+percentage: PropTypes.number,
+    })).isRequired,
 
-//   stats: PropTypes.string,
 };
 export default Statistics;

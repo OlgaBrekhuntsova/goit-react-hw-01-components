@@ -6,7 +6,8 @@ const TaskCard = ({ taskList, children }) => {
        taskList.map(({ id, name }) => (
                     <section key={id} className="task-card-item">
                <h2 className="task-title">{name}</h2>
-                   {(() => {
+                  
+                {/* {(() => {
                    switch (id) {
                        case "profile":
                           return children.filter(child => child.props.dataType === "Profile");
@@ -23,16 +24,26 @@ const TaskCard = ({ taskList, children }) => {
                        default:
                            console.log("Sorry, there isn't such task in a list.")
                    }
-               })()} 
-                                 </section>
+               })()} */}
+               {id === "profile" && (children.filter(child => child.props.dataType === "Profile"))}
+               {id === "statistics" && (children.filter(child => child.props.dataType === "Statistics"))}
+               {id === "friendList" && (children.filter(child => child.props.dataType === "FriendList"))}
+                { id==="transactionHistory" && (children.filter(child => child.props.dataType === "TransactionHistory"))}
+                </section>
             )
             )
                 );
    };
+TaskCard.defaultProps = {
+    children: []
+};
 
+TaskCard.propTypes = {
+    taskList: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+name: PropTypes.string.isRequired,
+    })).isRequired,
+    children: PropTypes.node,
 
-// TaskCard.propTypes = {
-// // key: PropTypes.string.isRequired,
-//  taskName: PropTypes.string.isRequired,
-//   };
+  };
 export default TaskCard;

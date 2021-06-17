@@ -1,3 +1,6 @@
+import React from "react";
+import PropTypes from 'prop-types';
+import photoDefault from "../assets/no-photo-default.jpeg";
 const FriendList = ({ friends }) => {
     return (
         <ul className="friend-list">
@@ -9,4 +12,16 @@ const FriendList = ({ friends }) => {
             </li>))}
         </ul>);
 };
+FriendList.defaultProps = {
+    avatar: photoDefault, //не находит
+};
+
+FriendList.propTypes = {
+    friends: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+avatar: PropTypes.string,
+isOnline: PropTypes.bool,
+    })).isRequired
+  };
 export default FriendList;

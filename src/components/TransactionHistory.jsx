@@ -1,4 +1,6 @@
-const TransactionHistory = ({items}) => {
+import PropTypes from 'prop-types';
+
+const TransactionHistory = ({ items }) => {
     return (
         <table className="transaction-history">
   <thead>
@@ -19,5 +21,17 @@ const TransactionHistory = ({items}) => {
         </tbody>
 </table>);
 };
+TransactionHistory.defaultProps = {
+  amount: "0", //не находит
+  type: "unknown", //не находит
+};
 
+TransactionHistory.propTypes = {
+    items: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+      type: PropTypes.string,
+amount: PropTypes.string,
+currency: PropTypes.string.isRequired,
+    })).isRequired
+  };
 export default TransactionHistory;
