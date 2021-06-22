@@ -1,5 +1,5 @@
-// import React from 'react';
-// import Container from './components/Container/Container';
+import React from 'react';
+import Container from './components/Container/Container';
 import TaskCard from "./components/TaskCard/TaskCard";
 import Profile from "./components/Profile/Profile";
 import Statistics from "./components/Statistics/Statistics";
