@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import photoDefault from "../assets/no-photo-default.jpeg";
-import { userStatsDefault } from "../assets/defaults";
+import photoDefault from "./no-photo-default.jpeg";
+import { userStatsDefault } from "../../assets/defaults";
 
 const Profile = ({ name, tag, location, avatar, stats: {followers, views, likes} }) => {
     return (

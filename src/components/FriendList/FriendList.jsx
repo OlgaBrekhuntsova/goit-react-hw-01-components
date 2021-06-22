@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import photoDefault from "../assets/no-photo-default.jpeg";
+import photoDefault from "./no-photo-default.jpeg";
 const FriendList = ({ friends }) => {
     return (
         <ul className="friend-list">

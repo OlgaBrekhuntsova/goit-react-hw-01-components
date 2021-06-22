@@ -1,0 +1,50 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #e5e5e5;
+}
+
+img {
+  display: block;
+  height: auto;
+}
+button {
+  border: none;
+  background-color: transparent;
+  padding: 0px;
+  outline: none;
+}
+
+button:hover,
+button:focus,
+input:hover,
+input:focus,
+textarea:hover,
+textarea:focus,
+label:hover,
+label:focus {
+  cursor: pointer;
+}
+a {
+  display: block;
+  font-style: normal;
+  text-decoration: none;
+  /* &:hover,
+    &:focus {
+      color: $accent-color;
+      } */
+}
+li {
+  list-style: none;
+  padding-left: 0px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
