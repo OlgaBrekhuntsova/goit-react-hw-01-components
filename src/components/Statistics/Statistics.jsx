@@ -1,17 +1,18 @@
 import React from "react";
 import PropTypes from 'prop-types';
-
+import colorGenerator from './colorGenerator';
+import styles from './Statistics.module.css';
 
 const Statistics = ({ title, stats}) => {
     
     return (
-        <div className="statistics">
-             { title && (<h3 className="title">{ title}</h3>)}
-            <ul className="stat-list">
+        <div className={styles.statistics}>
+             { title && (<h3 className={styles.title}>{ title}</h3>)}
+            <ul className={styles.stat_list}>
                 {stats.map(({ id, label, percentage }) => (
-                    <li key={id} className="item">
-                        <span className="label">{ label}</span>
-                        <span className="percentage">{percentage }%</span>
+                    <li key={id} className={styles.item } style={{backgroundColor: colorGenerator() }}>
+                        <span className={styles.label}>{ label}</span>
+                        <span className={styles.percentage}>{percentage }%</span>
                     </li>
                 )
                 )} 

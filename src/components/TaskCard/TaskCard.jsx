@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import styles from './TaskCard.module.css'
 
 const TaskCard = ({ taskList, children }) => {
         return (
        taskList.map(({ id, name }) => (
-                    <section key={id} className="task-card-item">
-               <h2 className="task-title">{name}</h2>
+           <section key={id} className={styles.task_card_item}>
+               <h2 className={styles.task_title}>{name}</h2>
                   
                 {/* {(() => {
                    switch (id) {

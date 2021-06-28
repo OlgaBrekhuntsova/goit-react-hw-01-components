@@ -15,7 +15,7 @@ const App = () => {
         return (
             <Container>
                 <h1>Goit-react-hw-01-components</h1>
-                <TaskCard taskList={taskListData123}>
+                <TaskCard taskList={taskListData}>
                 <Profile dataType="Profile" name={user.name} tag={user.tag} location={user.location} avatar={user.avatar} stats={user.stats} /> 
                 <Statistics dataType="Statistics"
                 title="Upload stats"

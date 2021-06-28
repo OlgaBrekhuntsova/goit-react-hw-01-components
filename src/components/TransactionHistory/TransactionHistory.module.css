@@ -1,0 +1,36 @@
+@value border-color, bg-color, secondary-color from "../../vars.module.css";
+.transaction_history {
+  width: 80%;
+  border-collapse: collapse;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 3px 3px 3px 3px rgba(209, 205, 216, 0.3);
+}
+.item {
+  font-size: larger;
+  text-transform: capitalize;
+}
+.item:nth-child(2n) {
+  background-color: bg-color;
+}
+.item:last-child {
+  border-bottom: 1px solid border-color;
+}
+thead {
+  text-transform: uppercase;
+  font-size: larger;
+  background-color: rgb(5, 187, 219);
+  color: white;
+}
+th,
+td {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+td {
+  border-left: 1px solid border-color;
+  border-right: 1px solid border-color;
+}
+th:not(:first-child) {
+  border-left: 1px solid white;
+}
